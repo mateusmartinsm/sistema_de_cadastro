@@ -26,8 +26,10 @@ def layout(tabela: object, vagas: list):
             ], element_justification='right')],
             [sg.Sizer(479), sg.Button('ADICIONAR', size=tamanho_botao, key='-ADICIONAR-')]
         ], pad=(10, 15), expand_x=True, element_justification='center')],
-        [sg.Table(tabela_itens, tabela_headers, auto_size_columns=False, num_rows=15, def_col_width=15, justification='center', expand_x=True, key='-TABELA-')],
-        [sg.Button('SALVAR', size=tamanho_botao, key='-SALVAR-')]
+        [sg.Column([
+            [sg.Table(tabela_itens, tabela_headers, auto_size_columns=False, num_rows=15, def_col_width=15, justification='center', expand_x=True, key='-TABELA-')],
+            [sg.Button('SALVAR', size=tamanho_botao, key='-SALVAR-')]
+        ], element_justification='right')]
     ]
 
 def popup(mensagem):
